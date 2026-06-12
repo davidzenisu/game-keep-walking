@@ -1,0 +1,27 @@
+{
+  "name": "Flutter Development",
+  "image": "mcr.microsoft.com/devcontainers/android:latest",
+  "features": {
+    "ghcr.io/devcontainers/features/ruby:1": {},
+    "ghcr.io/devcontainers/features/git:1": {}
+  },
+  "postCreateCommand": "bash .devcontainer/post-create.sh",
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "Dart-Code.flutter",
+        "Dart-Code.dart-code",
+        "eamodio.gitlens",
+        "ms-vscode.cpptools",
+        "google.flutter-intl-vs-code"
+      ],
+      "settings": {
+        "dart.flutterSdkPath": "/flutter",
+        "dart.enableCompletionCommitCharacters": false,
+        "dart.lineLength": 100
+      }
+    }
+  },
+  "remoteUser": "root",
+  "forwardPorts": [8080]
+}
