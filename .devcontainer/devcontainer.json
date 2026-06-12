@@ -1,12 +1,16 @@
 {
-  "name": "Flutter Development",
-  "image": "mcr.microsoft.com/devcontainers/android:latest",
-  "features": {
-    "ghcr.io/devcontainers/features/ruby:1": {},
-    "ghcr.io/devcontainers/features/git:1": {}
-  },
-  "postCreateCommand": "bash .devcontainer/post-create.sh",
-  "customizations": {
+    "name": "Flutter Development Container",
+    "build": {
+        "dockerfile": "Dockerfile"
+    },
+    "runArgs": [
+        "--privileged",
+        "-v",
+        "/dev/bus/usb:/dev/bus/usb"
+    ],
+    "forwardPorts": [8081, 5037],
+    "remoteUser": "root",
+      "customizations": {
     "vscode": {
       "extensions": [
         "Dart-Code.flutter",
@@ -18,10 +22,10 @@
       "settings": {
         "dart.flutterSdkPath": "/flutter",
         "dart.enableCompletionCommitCharacters": false,
-        "dart.lineLength": 100
+        "dart.lineLength": 100,
+        "editor.formatOnSave": true,
+        "files.autoSave": "afterDelay"
       }
     }
-  },
-  "remoteUser": "root",
-  "forwardPorts": [8080]
+  }
 }
