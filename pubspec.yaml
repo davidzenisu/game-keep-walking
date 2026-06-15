@@ -13,8 +13,9 @@ dependencies:
     sdk: flutter
   cupertino_icons: ^1.0.2
   google_fonts: ^8.1.0
-  flutter_health_connect: ^1.2.3
-
+  health: ^13.3.1
+  permission_handler: ^12.0.3
+  carp_serializable: ^2.0.1
 dev_dependencies:
   flutter_test:
     sdk: flutter

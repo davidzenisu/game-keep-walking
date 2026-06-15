@@ -10,11 +10,11 @@ import 'package:flutter_test/flutter_test.dart';
 import 'package:game_keep_walking/main.dart';
 
 void main() {
-  testWidgets('Game screen renders', (WidgetTester tester) async {
+  testWidgets('Health app renders', (WidgetTester tester) async {
     // Build our app and trigger a frame.
-    await tester.pumpWidget(const MyApp());
+    await tester.pumpWidget(const HealthApp());
 
-    // Verify that the GameScreen is displayed.
-    expect(find.byType(GameScreen), findsOneWidget);
+    // Verify that the HealthApp is displayed.
+    expect(find.byType(HealthApp), findsOneWidget);
   });
 }
