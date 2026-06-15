@@ -1,0 +1,5 @@
+<resources>
+    <string-array name="health_permissions">
+        <item>android.permission.health.READ_STEPS</item>
+    </string-array>
+</resources>
