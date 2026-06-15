@@ -31,3 +31,10 @@ jobs:
           cache: true
       - run: flutter pub get
       - run: flutter build apk --release --target-platform android-arm64
+
+      - name: Upload build artifacts
+        if: github.ref == 'refs/heads/main'
+        uses: actions/upload-artifact@v7
+        with:
+          name: AndroidBuild
+          path: android/app/build/outputs/flutter-apk/app-release.apk
