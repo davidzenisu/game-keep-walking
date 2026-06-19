@@ -28,10 +28,18 @@ class _HealthAppState extends State<HealthApp> {
   AppState _state = AppState.dataNotFetched;
   int _nofSteps = 0;
 
+  @override
+  void initState() {
+    super.initState();
+    health.configure();
+  }
+
   List<HealthDataType> get types => const [HealthDataType.STEPS];
   List<HealthDataAccess> get permissions => const [HealthDataAccess.READ];
 
   Future<void> authorize() async {
+    await health.configure();
+
     bool? hasPermissions = await health.hasPermissions(
       types,
       permissions: permissions,
@@ -80,6 +88,8 @@ class _HealthAppState extends State<HealthApp> {
   }
 
   Future<void> fetchStepData() async {
+    await health.configure();
+
     bool? hasPermissions = await health.hasPermissions(
       types,
       permissions: permissions,
