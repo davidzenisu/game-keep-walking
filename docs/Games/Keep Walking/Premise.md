@@ -2,7 +2,7 @@
 share: true
 repo:
   repo: game-keep-walking
-  branch: main
+  branch: feature/docs
 ---
 Gacha game where currency are steps
 Eg. 1000 steps for a pull
